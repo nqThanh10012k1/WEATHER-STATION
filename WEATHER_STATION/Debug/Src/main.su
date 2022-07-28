@@ -1,0 +1,17 @@
+../Src/main.c:66:5:main	8	static
+../Src/main.c:86:6:LCD_SetUp	16	static
+../Src/main.c:96:6:TIM1_Base_Init	24	static
+../Src/main.c:117:6:TIM1_UP_TIM10_IRQHandler	8	static
+../Src/main.c:123:6:I2C1_Init	32	static
+../Src/main.c:149:6:I2Cx_Send_StartBit	16	static
+../Src/main.c:156:6:I2Cx_Transmit_AddressPhase	16	static
+../Src/main.c:171:6:I2Cx_Transmit_SensorCommand	16	static
+../Src/main.c:177:9:I2Cx_Receive_Data_Ack	16	static
+../Src/main.c:185:9:I2Cx_Receive_Data_Nack	16	static
+../Src/main.c:195:6:I2Cx_Send_StopBit	16	static
+../Src/main.c:200:6:TemHumSensor_readRegister	16	static
+../Src/main.c:228:10:TemHumSensor_getTemperature	16	static
+../Src/main.c:240:10:TemHumSensor_getHumidity	16	static
+../Src/main.c:262:6:Light_Sensor_Adc_Init	56	static
+../Src/main.c:300:10:Light_Sensor_Adc_Polling_Read	16	static
+../Src/main.c:311:6:processGetValueSensor	24	static

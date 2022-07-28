@@ -1,0 +1,30 @@
+13:08:59 **** Clean-only build of configuration Debug for project WEATHER_STATION ****
+make -j4 clean 
+rm -rf ./Startup/startup_stm32f401retx.d ./Startup/startup_stm32f401retx.o
+rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf WEATHER_STATION.elf WEATHER_STATION.list WEATHER_STATION.map default.size.stdout
+ 
+13:09:00 **** Incremental Build of configuration Debug for project WEATHER_STATION ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f401retx.d" -MT"Startup/startup_stm32f401retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f401retx.o" "../Startup/startup_stm32f401retx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/CMSIS/Include" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/STM32F401RE_StdPeriph_Driver/inc" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/button" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/buzzer" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/led" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/rtos" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/sensor" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/serial" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/ucglib" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Utilities" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/CMSIS/Include" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/STM32F401RE_StdPeriph_Driver/inc" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/button" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/buzzer" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/led" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/rtos" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/sensor" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/serial" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/ucglib" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Utilities" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/CMSIS/Include" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/STM32F401RE_StdPeriph_Driver/inc" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/button" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/buzzer" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/led" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/rtos" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/sensor" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/serial" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/ucglib" -I"D:/STM32/SDK_1.0.3_NUCLEO-F401RE/shared/Utilities" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "WEATHER_STATION.elf" @"objects.list"  -lLibraries -mcpu=cortex-m4 -T"D:\Project\WEATHER_STATION\WEATHER_STATION\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="WEATHER_STATION.map" -Wl,--gc-sections -static -L"D:\STM32\SDK_1.0.3_NUCLEO-F401RE\lib_stm" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: WEATHER_STATION.elf
+ 
+arm-none-eabi-size   WEATHER_STATION.elf 
+arm-none-eabi-objdump -h -S  WEATHER_STATION.elf  > "WEATHER_STATION.list"
+   text	   data	    bss	    dec	    hex	filename
+  23872	    148	   6356	  30376	   76a8	WEATHER_STATION.elf
+Finished building: default.size.stdout
+ 
+Finished building: WEATHER_STATION.list
+ 
+13:09:10 **** Incremental Build of configuration Debug for project WEATHER_STATION ****
+make -j4 all 
+arm-none-eabi-size   WEATHER_STATION.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23872	    148	   6356	  30376	   76a8	WEATHER_STATION.elf
+Finished building: default.size.stdout
+ 

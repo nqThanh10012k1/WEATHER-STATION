@@ -1,0 +1,44 @@
+/*
+ * Bai5_Lap1.c
+ *
+ *  Created on: Sep 6, 2021
+ *      Author: Thanh Nguyen
+ */
+
+#include <stm32f401re_rcc.h>
+#include <stdint.h>
+#include <stdio.h>
+#include "timer.h"
+#include "Ucglib.h"
+static ucg_t ucg;
+
+int main(void)
+{
+
+	SystemCoreClockUpdate();
+	TimerInit();
+	Ucglib4WireSWSPI_begin(&ucg, UCG_FONT_MODE_SOLID);
+	ucg_ClearScreen(&ucg);
+	ucg_SetFont(&ucg, ucg_font_ncenR12_hr);
+	ucg_SetColor(&ucg, 0, 255, 255, 255);
+	ucg_SetColor(&ucg, 1, 0, 0, 0);
+	//ucg_SetRotate180(&ucg);
+
+
+	int so_hang, so_cot, toa_do_hang, toa_do_cot;
+	for (so_hang = 0, toa_do_cot = 25, toa_do_hang = 40; so_hang < 4; so_hang++, toa_do_hang+=15)
+	{
+		for (so_cot = 0; so_cot < 6; so_cot++)
+		{
+			ucg_DrawString(&ucg, toa_do_cot+so_cot*14, toa_do_hang, 0,"*");
+		}
+	}
+
+	while(1)
+	{
+		processTimerScheduler();
+	}
+
+    return 0;
+}
+
